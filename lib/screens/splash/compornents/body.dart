@@ -73,7 +73,7 @@ class SplashContent extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(text,),
+        Text(text),
         Spacer(flex: 2),
         Image.asset(
           image,
