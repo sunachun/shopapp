@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopapp/components/no_account_text.dart';
 import 'package:shopapp/components/social_card.dart';
-import 'package:shopapp/constants.dart';
-import 'package:shopapp/screens/forgot_password/forgot_password_screen.dart';
 import 'package:shopapp/screens/sign_in/compornents/sign_form.dart';
 import 'package:shopapp/size_config.dart';
 
