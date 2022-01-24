@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopapp/constants.dart';
 import 'package:shopapp/size_config.dart';
 
+import 'otp_form.dart';
+
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,16 +12,30 @@ class Body extends StatelessWidget {
       child: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-        child: Column(
-          children: <Widget>[
-            Text(
-              "OTP Verification",
-              style: headingStyle,
-            ),
-            Text("We sent your code to +1 898 860 ***"),
-            buildTimer(),
-            OtpForm(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: SizeConfig.screenHeight * 0.05),
+              Text(
+                "OTP Verification",
+                style: headingStyle,
+              ),
+              Text("We sent your code to +1 898 860 ***"),
+              buildTimer(),
+              SizedBox(height: SizeConfig.screenHeight * 0.15),
+              OtpForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.1), //10%
+              GestureDetector(
+                onTap: () {
+                  // resend your OTP
+                },
+                child: Text(
+                  "Resend OTP Code",
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -40,68 +56,6 @@ class Body extends StatelessWidget {
           onEnd: () {},
         ),
       ],
-    );
-  }
-}
-
-class OtpForm extends StatefulWidget {
-  @override
-  _OtpFormState createState() => _OtpFormState();
-}
-
-class _OtpFormState extends State<OtpForm> {
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          SizedBox(
-            width: getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              textAlign: TextAlign.center,
-              decoration: otpInputDecoration,
-              onChanged: (value) {},
-            ),
-          ),
-          SizedBox(
-            width: getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              textAlign: TextAlign.center,
-              decoration: otpInputDecoration,
-              onChanged: (value) {},
-            ),
-          ),
-          SizedBox(
-            width: getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              textAlign: TextAlign.center,
-              decoration: otpInputDecoration,
-              onChanged: (value) {},
-            ),
-          ),
-          SizedBox(
-            width: getProportionateScreenWidth(60),
-            child: TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.number,
-              style: TextStyle(fontSize: 24),
-              textAlign: TextAlign.center,
-              decoration: otpInputDecoration,
-              onChanged: (value) {},
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
