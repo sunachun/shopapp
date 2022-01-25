@@ -3,7 +3,7 @@ import 'package:shopapp/components/custom_surfix_icon.dart';
 import 'package:shopapp/components/default_button.dart';
 import 'package:shopapp/components/form_error.dart';
 import 'package:shopapp/screens/forgot_password/forgot_password_screen.dart';
-import 'package:shopapp/screens/login_screens/login_success_screen.dart';
+import 'package:shopapp/screens/login_success/login_success_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
